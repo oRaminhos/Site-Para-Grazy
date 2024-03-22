@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/FotoTop.png.jpeg" type="image/x-icon">
+    <title>Site da Grazy</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a>Notas </a></div>
+            <ul class="links">
+                <li><a href="index.html">Início</a></li>
+          <li><a href="foto_top.html">Fotos Topzera</a></li>
+          <li><a href="Poemas.html">Poemas Topzera</a></li>
+          <li><a href="cozinha.html">Ratatouille Kitchen </a></li>
+            </ul>
+            <a href="#" class="action_btn"> Clique aqui :D</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="index.html">Início</a></li>
+          <li><a href="foto_top.html">Fotos Topzera</a></li>
+          <li><a href="Poemas.html">Poemas Topzera</a></li>
+          <li><a href="cozinha.html">Ratatouille Kitchen </a></li>
+            <li><a href="#" class="action_btn"> Clique aqui :D</a></li>
+        </div>
+    </header>
+    <div class="gallery-container">
+
+    <div class="left-gallery">
+        <img src="img/insta1.jpeg" alt="Imagem 1">
+        <img src="img/insta3.jpeg" alt="Imagem 2">
+        <img src="img/insta5.jpeg" alt="Imagem ">
+        <img src="img/insta7.jpeg" alt="Imagem ">
+        <img src="img/insta9.jpg" alt="Imagem ">
+
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+    <div class="right-gallery">
+        <img src="img/insta2.jpeg" alt="Imagem 4">
+        <img src="img/insta4.jpeg" alt="Imagem 5">
+        <img src="img/insta6.jpeg" alt="Imagem 6">
+        <img src="img/insta8.jpeg" alt="Imagem 6">
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+
+</div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>CALVA BAIANA</p>
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+        const actionBtn = document.querySelector('.action_btn');
+        const popup = document.getElementById('popup');
+        
+        toggleBtn.addEventListener('click', function() {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+        
+            toggleBtnIcon.classList.toggle('fa-bars', !isOpen);
+            toggleBtnIcon.classList.toggle('fa-xmark', isOpen);
+        });
+        
+        actionBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            popup.style.display = 'block';
+        });
+        
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+        
+        window.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

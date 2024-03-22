@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/FotoTop.png.jpeg" type="image/x-icon">
+  <title>Site da Grazy</title>
+</head>
+
+<body>
+<header>
+    <div class="navbar">
+        <div class="logo"><a>Sitezin da Grazy</a></div>
+        <ul class="links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="foto_top.html">Fotos Topzera</a></li>
+          <li><a href="Poemas.html">Poemas Topzera</a></li>
+          <li><a href="cozinha.html">Ratatouille Kitchen </a></li>
+         </ul>
+         <a class="action_btn"> Clique aqui :D</a>
+         <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+         </div>
+    </div>
+
+    <div class="dropdown_menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="foto_top.html">Fotos Topzera</a></li>
+      <li><a href="Poemas.html">Poemas Topzera</a></li>
+      <li><a href="cozinha.html">Ratatouille Kitchen </a></li>
+    </div>
+</header>
+
+<main>
+  <section id="hero">
+      <div class="hero-content">
+          <h1>Sitezin Para Grazy</h1>
+          <p>Tive que mudar umas coisinhas para que voce possa usar no cell</p>
+          <p>Aqui alem de ser <b>"Seu Site"</b> , vamos colocar as nossas receitas que temos salvo no Instragram, e as imagem que logo logo você ira saber.</p>
+      </div>
+      <div class="action-btn-container">
+          <a class="custom-btn action_btn"> Clique aqui :D</a>
+      </div>
+  </section>
+</main>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <p>CALVA BAIANA by:david xD</p>
+  </div>
+</div>
+
+<script>
+const toggleBtn = document.querySelector('.toggle_btn');
+const toggleBtnIcon = document.querySelector('.toggle_btn i');
+const dropDownMenu = document.querySelector('.dropdown_menu');
+const actionBtn = document.querySelector('.action_btn');
+const customBtn = document.querySelector('.custom-btn');
+const popup = document.getElementById('popup');
+const closeBtn = document.querySelector('.close');
+
+toggleBtn.addEventListener('click', function() {
+    dropDownMenu.classList.toggle('open');
+    const isOpen = dropDownMenu.classList.contains('open');
+
+    toggleBtnIcon.classList.toggle('fa-bars', !isOpen);
+    toggleBtnIcon.classList.toggle('fa-xmark', isOpen);
+});
+
+actionBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    popup.style.display = 'block';
+});
+
+customBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    popup.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', function() {
+    popup.style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+});
+</script>
+
+</body>
+</html>

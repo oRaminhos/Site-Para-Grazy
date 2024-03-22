@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/FotoTop.png.jpeg" type="image/x-icon">
+    <title>Site da Grazy</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a>Grazy Ratatouille</a></div>
+            <ul class="links">
+                <li><a href="index.html">Início</a></li>
+          <li><a href="foto_top.html">Fotos Topzera</a></li>
+          <li><a href="Poemas.html">Poemas Topzera</a></li>
+          <li><a href="cozinha.html">Ratatouille Kitchen </a></li>
+            </ul>
+            <a href="#" class="action_btn"> Clique aqui :D</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+            <div class="kitchen-text">
+                <h1>Ratatouille Kitchen</h1>
+               
+            </div>
+
+        </div>
+
+        <div class="left-gallery">
+            <a href="https://www.instagram.com/reel/C1vvi42Mknh/">Clique no link - Cookie </a>
+            <a href="https://www.instagram.com/p/C274Sz7LkjB/pagina2.html">Clique no link- Potato Croquette</a>
+           
+        </div>
+        <div class="right-gallery">
+            <a href="https://www.instagram.com/p/C2-iYjdtfUd/">Clique no link -Cheesy Popcorn Chicken  </a>
+            <a href="https://www.instagram.com/reel/C4VPrLsNj9I/">Clique no link- Cookie v2</a>
+          
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="foto_top.html">Fotos Topzera</a></li>
+            <li><a href="Poemas.html">Poemas Topzera</a></li>
+            <li><a href="cozinha.html">Ratatouille Kitchen </a></li>
+            <li><a href="#" class="action_btn"> Clique aqui :D</a></li>
+        </div>
+    </header>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>CALVA BAIANA</p>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+        const actionBtn = document.querySelector('.action_btn');
+        const popup = document.getElementById('popup');
+        
+        toggleBtn.addEventListener('click', function() {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+        
+            toggleBtnIcon.classList.toggle('fa-bars', !isOpen);
+            toggleBtnIcon.classList.toggle('fa-xmark', isOpen);
+        });
+        
+        actionBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            popup.style.display = 'block';
+        });
+        
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+        
+        window.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

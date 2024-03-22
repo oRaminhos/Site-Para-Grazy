@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/FotoTop.png.jpeg" type="image/x-icon">
+    <title>Site da Grazy</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a>Poemas para Grazy</a></div>
+            <ul class="links">
+                <li><a href="index.html">Início</a></li>
+          <li><a href="foto_top.html">Fotos Topzera</a></li>
+          <li><a href="Poemas.html">Poemas Topzera</a></li>
+          <li><a href="cozinha.html">Ratatouille Kitchen </a></li>
+            </ul>
+            <a href="#" class="action_btn"> Clique aqui :D</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="index.html">Início</a></li>
+          <li><a href="foto_top.html">Fotos Topzera</a></li>
+          <li><a href="Poemas.html">Poemas Topzera</a></li>
+          <li><a href="cozinha.html">Ratatouille Kitchen </a></li>
+            <li><a href="#" class="action_btn"> Clique aqui :D</a></li>
+        </div>
+    </header>
+    <div class="Text">
+      <div class="tittle">
+          <h1>Para Grazy:</h1>
+      </div>
+
+      <div class="declaration">
+        <p>1 .Em Arles, sob o sol escaldante do sul,
+            Van Gogh encontra cores que acendem sua alma.
+            Pintor de campos dourados, girassóis em flor,
+            Nas telas, um grito de amor pela vida e pela calma.</br>
+        </br>2 . Em seu quarto humilde, nas noites de agonia,
+        Vincent pinta estrelas em espirais de luz.
+        A noite estrelada, sua melancolia,
+        Refletida na tela, um céu que seduz.</br></br>
+        3 .Café à noite, um lugar de encontros e solidão,
+        Onde Van Gogh encontra seus temas e tormentos.
+        Nas pinceladas rápidas, a composição
+        De um artista que pinta seus sentimentos.</br></br>
+        4 .O grito expresso em pinceladas densas,
+        Em "O Grito da Natureza", ecoa em sua arte.
+        Van Gogh, sua vida marcada por presenças
+        Que o atormentavam, como uma parte.</p>
+
+      </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p>CALVA BAIANA</p>
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+        const actionBtn = document.querySelector('.action_btn');
+        const popup = document.getElementById('popup');
+        const closeBtn = document.querySelector('.close');
+        
+        toggleBtn.addEventListener('click', function() {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+        
+            toggleBtnIcon.classList.toggle('fa-bars', !isOpen);
+            toggleBtnIcon.classList.toggle('fa-xmark', isOpen);
+        });
+        
+        actionBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            popup.style.display = 'block';
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
